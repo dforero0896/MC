@@ -27,4 +27,9 @@ Se requiere:
 4. Para subirlo: git push origin master.
 5. 
 
+Leer:
++ Pro Git págs: 27-34
++ Pro Bash Programming 1 - 28
++ Survey Of Computationa Physics 1.1 - 1.6
+
 Por revisar: ssh
