@@ -18,3 +18,10 @@ y los métodos a estudiar son:
 6. y métodos de Monte Carlo.
 
 Editando online
+
+**Para agregar *commit*s**
+Se requiere:
+1. git add ForeroD-Journal.md
+2. git commit
+3. Poner comentario acerca del commit
+4. Para subirlo: git push origin master.
