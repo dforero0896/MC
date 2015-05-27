@@ -25,3 +25,6 @@ Se requiere:
 2. git commit
 3. Poner comentario acerca del commit
 4. Para subirlo: git push origin master.
+5. 
+
+Por revisar: ssh
