@@ -16,3 +16,5 @@ y los métodos a estudiar son:
 4. ecuaciones diferenciales ordinarias,
 5. ecuaciones diferenciales parciales,
 6. y métodos de Monte Carlo.
+
+Editando online
