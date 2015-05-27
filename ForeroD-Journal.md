@@ -1,5 +1,5 @@
 #Primera Clase 27May2015
-¡Hola MUndo, aquí estoy comenzando el curso de **Métodos Computacionales**-
+¡Hola Mundo, aquí estoy comenzando el curso de **Métodos Computacionales**-
 
 Herramientas del Curso:
 + git,
