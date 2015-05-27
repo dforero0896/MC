@@ -29,6 +29,8 @@ Se requiere:
 
 Leer:
 + Pro Git págs: 27-34
+  + Como atajo para agregar commit se puede usar *git commit -a -m 'comentario'*
+
 + Pro Bash Programming 1 - 28
 + Survey Of Computationa Physics 1.1 - 1.6
 
