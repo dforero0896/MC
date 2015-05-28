@@ -1,4 +1,4 @@
-#Primera Clase 27May2015
+﻿#Primera Clase 27May2015
 ¡Hola Mundo, aquí estoy comenzando el curso de **Métodos Computacionales**-
 
 Herramientas del Curso:
@@ -30,11 +30,7 @@ Se requiere:
 Leer:
 + Pro Git págs: 27-34
   + Como atajo para agregar commit se puede usar *git commit -a -m 'comentario'*
-<<<<<<< HEAD
   + Se usa *git commit --amend* para corregir el último commit.
-=======
-
->>>>>>> a2ab6666f002348318d207133f310ed1da0d5275
 + Pro Bash Programming 1 - 28
 + Survey Of Computational Physics 1.1 - 1.6
 
