@@ -32,6 +32,7 @@ Leer:
   + Como atajo para agregar commit se puede usar *git commit -a -m 'comentario'*
   + Se usa *git commit --amend* para corregir el último commit.
 + Pro Bash Programming 1 - 28
+	+
 + Survey Of Computational Physics 1.1 - 1.6
 
 Por revisar: ssh
