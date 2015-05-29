@@ -20,7 +20,10 @@ y los métodos a estudiar son:
 Editando online
 
 **Para agregar *commit*s**
+
 Se requiere:
+
+
 1. git add ForeroD-Journal.md
 2. git commit
 3. Poner comentario acerca del commit
@@ -32,7 +35,12 @@ Leer:
   + Como atajo para agregar commit se puede usar *git commit -a -m 'comentario'*
   + Se usa *git commit --amend* para corregir el último commit.
 + Pro Bash Programming 1 - 28
-	+
 + Survey Of Computational Physics 1.1 - 1.6
 
 Por revisar: ssh
+
+# Segunda Clase 29May2015
+
+Utilizar variables de bash en awk `awk -v varawk=$varbash` con `varbash` la variable de bash que se desea recuperar.
+
+Para declarar variables mas complejas en bash `var=$(echo $((a+b)))` 
