@@ -4,6 +4,8 @@ A continuación se encontrarán las subsecciones.
 1. Se requiere poner una lista numerada
 2. Una lista sin numerar
 3. Otros items en la siguiente sección.
+
+
 ## Subsección número 2
 Dichos items consisten en:
 + Un link.
@@ -14,7 +16,7 @@ Dichos items consisten en:
 
 Además se escribe código correspondiente a la inicialización de un programa matemático en iPython `%pylab inline`.
 
-Por otra parte se ven bloques de código:\\
-```import numpy as np\\
-import matplotlib.pyplot as plt\\
+Por otra parte se ven bloques de código:
+```import numpy as np
+import matplotlib.pyplot as plt
 from scipy import * ```.
