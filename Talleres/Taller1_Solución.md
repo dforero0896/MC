@@ -19,9 +19,7 @@ Además se escribe código correspondiente a la inicialización de un programa m
 Por otra parte se ven bloques de código:
 
 
-```import numpy as np
-
-import matplotlib.pyplot as plt
-
-from scipy import \*
 ```
+import numpy as np
+import matplotlib.pyplot as plt
+``` 
