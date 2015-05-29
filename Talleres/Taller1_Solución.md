@@ -1,3 +1,5 @@
+#Primer Punto
+```
 # La primera sección
 A continuación se encontrarán las subsecciones.
 ## Subsección número 1
@@ -22,4 +24,6 @@ Por otra parte se ven bloques de código:
 ```
 import numpy as np
 import matplotlib.pyplot as plt
-``` 
+```
+
+```
