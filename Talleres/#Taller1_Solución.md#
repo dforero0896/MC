@@ -1,0 +1,13 @@
+# La primera sección
+A continuación se encontrarán las subsecciones.
+## Subsección número 1
+1. Se requiere poner una lista numerada
+2. Una lista sin numerar
+3. Otros items en la siguiente sección.
+## Subsección número 2
+Dichos items consisten en:
++ Un link.
++ Un troxzo de código *inline*.
++ Un trozo de código en bloque.
+
+[Éste es el link que lleva a Google Colombia](www.google.com.co)
