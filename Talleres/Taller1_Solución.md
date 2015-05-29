@@ -1,5 +1,5 @@
 #Primer Punto
-```
+
 # La primera sección
 A continuación se encontrarán las subsecciones.
 ## Subsección número 1
@@ -26,4 +26,5 @@ import numpy as np
 import matplotlib.pyplot as plt
 ```
 
-```
+
+
