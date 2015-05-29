@@ -21,8 +21,6 @@ Por otra parte se ven bloques de código:
 
 ```import numpy as np
 
-
 import matplotlib.pyplot as plt
-
 
 from scipy import * ```.
