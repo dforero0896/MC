@@ -45,6 +45,9 @@ Utilizar variables de bash en awk `awk -v varawk=$varbash` con `varbash` la vari
 
 Para declarar variables mas complejas en bash `var=$(echo $((a+b)))` 
 
+Dado que estoy trabajando en mi propio equipo, fue necesario usar ssh para entrar a compufísica desde mi terminal. Se usó `ssh df.forero10@compufi6.uniandes.edu.co`. La IP de compufísica es: 157.253.160.142 en caso de ser necesaria.
+
+
 A continuación se muestran los resultados de la indagación o "paleontología" que se realizó en el repositorio del curso de Métodos Computacionales. Se usó el comando `git log --before 2013`. Se buscó el segundo *commit* y se obtuvo la fecha y el hash. Se hizo `git checkout hash`. Posteriormente se revisó el repositorio y se vió el syllabus original por medio de `less syllabus.tex` para obtener la informacion requerida.
 + La fecha del segundo commit fue: Sat Jan 5 23:05:56 2013 -0500
 + El tema de la semana 15 del primer curso fue: Semana 15 & M\'etodo de inferencia bayesiana& SQL\\
