@@ -8,3 +8,4 @@ echo http://arxiv.org/list/astro-ph/new
 curl -s http://arxiv.org/list/astro-ph/new | grep -i  $kwrd | grep Title
 echo =====================================
 echo keyword: $kwrd
+echo =====================================
