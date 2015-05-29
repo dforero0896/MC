@@ -23,5 +23,5 @@ Por otra parte se ven bloques de código:
 
 import matplotlib.pyplot as plt
 
-from scipy import *
+from scipy import \*
 ```
