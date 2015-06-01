@@ -1,13 +1,23 @@
 #!/bin/bash
-echo Se calculará el número de planetas extrasolares en el archivo. \\n
+
+
+figlet 1.
+ 
 ninit=$(awk -F","  '{ print $1 }' kepler.csv | wc -l)
 nfin=$((ninit-1))
 echo Hay $nfin planetas en el archivo.
 
-echo Se calculará ahora el número de planetas con una masa menor a una centésima de la masa de Júpiter
 
-#nmasa= $(awk -F ","  '{ if($2 < 0.01 && $2 != 0) print $2 }' kepler.csv | sed '/^$/d' | wc -l)
+figlet 2.
 
-echo Se devolverá el nombre del planeta con menor periodo orbital.
-sort --field-separator="," --key=6 -n kepler.csv | awk -F"," 'NR==2 {print $1}'
-echo es el planeta con menor periodo orbital. 
+awk -F ","  '{ if($2 < 0.01 && $2 != 0) print $2 }' kepler.csv | sed '/^$/d' | wc -l | sed 's/$/ son los planetas con masa menor a una centésima parte de la masa de Júpiter./g'
+
+awk -F ","  '{ if($2 < 0.01 && $2 != 0) print $2 }' kepler.csv | sed '/^$/d' > masasMenores.csv
+
+mass=$(awk -F"," 'NR==1 {print $1}' masasMenores.csv)
+awk -v 'var=$mass {if($2==var) print $1' kepler.csv
+
+
+figlet 3.
+
+sort --field-separator="," --key=6 -n kepler.csv | awk -F"," 'NR==2 {print $1}' | sed 's/$/ es el planeta con menor periodo orbital./g'
