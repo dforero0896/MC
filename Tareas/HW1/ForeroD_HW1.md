@@ -82,3 +82,15 @@ rm temporal.csv
 
 echo ==============================================
 ```
+## Cuarto punto
+
+```
+ssh df.forero10@compufi3.uniandes.edu.co
+"Hola Juan." | mail -s "Taller1" j-lizara
+exit
+sftp df.forero10@compufi3.uniandes.edu.co
+cd /usuarios/homenfs7/taller1/
+get DANIEL-FELIPE-FORERO-SANCHEZ.png
+exit
+The only real valuable thing is intuition. > lacita.txt
+```
