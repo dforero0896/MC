@@ -92,5 +92,5 @@ sftp df.forero10@compufi3.uniandes.edu.co
 cd /usuarios/homenfs7/taller1/
 get DANIEL-FELIPE-FORERO-SANCHEZ.png
 exit
-The only real valuable thing is intuition. > lacita.txt
+echo The only real valuable thing is intuition. > lacita.txt
 ```
