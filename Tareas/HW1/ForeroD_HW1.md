@@ -5,6 +5,7 @@
 ```
 #!/bit/bash
 figlet arXiv
+echo Please enter the word you are looking for.
 read kwrd
 
 echo =====================================
