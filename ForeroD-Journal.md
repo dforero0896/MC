@@ -71,11 +71,23 @@ Se usan para la limpieza de archivos de datos. Ejemplo: joviansatellites.csv
 ## GNU Plot
 
 ` gnuplot`
+
+
 ` plot x`
+
+
 ` plot [1:2] x `
+
+
 ` set title "x"`
+
+
 ` set xlabel`
+
+
 ` set ylabel`
+
+
 ` set grid`
 ``` 
 set parametric
