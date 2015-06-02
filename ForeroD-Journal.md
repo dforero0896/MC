@@ -114,4 +114,7 @@ Hacer plots aplicando funciones:
 gnuplot> plot "joviansatellites.csv" using (cube($colx)):(quad($coly))
 ```
 
-
+##Hands-On 2
+1. Para una expresión regular que se refiera a los ṕrimeros cuatro caracteres del principio de la línes mas un espacio se debe buscar algo asi: `^.... `.
+2. Se agrega a la carpeta de ejemplos el tsv. Se utilizó `^ ` para buscar las lineas al inicio y `: ` para buscar los dos puntos y reemplazarlos por `\t`.
+3. 
