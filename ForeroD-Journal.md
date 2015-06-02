@@ -51,3 +51,55 @@ Dado que estoy trabajando en mi propio equipo, fue necesario usar ssh para entra
 A continuación se muestran los resultados de la indagación o "paleontología" que se realizó en el repositorio del curso de Métodos Computacionales. Se usó el comando `git log --before 2013`. Se buscó el segundo *commit* y se obtuvo la fecha y el hash. Se hizo `git checkout hash`. Posteriormente se revisó el repositorio y se vió el syllabus original por medio de `less syllabus.tex` para obtener la informacion requerida.
 + La fecha del segundo commit fue: Sat Jan 5 23:05:56 2013 -0500
 + El tema de la semana 15 del primer curso fue: Semana 15 & M\'etodo de inferencia bayesiana& SQL\\
+
+# Tercera Clase 2Jun2015
+
+## Expresiones regulares
+
+Se usan para la limpieza de archivos de datos. Ejemplo: joviansatellites.csv 
++ \^ inicio línea
++ \$ final línea
++ \. cualquier caracter
++ .* cuantificador 0 o más
++ .+ cuantificador 1 o más
++ (a|b)
++ \ escape
++ [a-z] rangos, varios elementos
++ \d digitos \D no digitos
+
+
+## GNU Plot
+
+` gnuplot`
+` plot x`
+` plot [1:2] x `
+` set title "x"`
+` set xlabel`
+` set ylabel`
+` set grid`
+``` 
+set parametric
+plot cos(t), sin(t)
+```
+`unset parametric`
+
+`splot x**2 + y**2`
+Para graficar desde archivo:
+
+```
+gnuplot> set datafile separator ","
+        plot "joviansatellites.csv" using 2:3
+```
+donde 2:3 son las columnas de la forma x:y. Se puede agregar `with lines` `with linesp`, `with circles`.
+
+Para definir funciones:
+```
+gnuplot> quad(x) = x**2
+gnuplot> cube(x) = x**3
+```
+Hacer plots aplicando funciones:
+```
+gnuplot> plot "joviansatellites.csv" using (cube($colx)):(quad($coly))
+```
+
+
