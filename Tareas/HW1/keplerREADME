@@ -1,0 +1,21 @@
+# Data retrieved from http://exoplanets.org/table on 28-May-2015
+#####################################################################
+#######################COLUMN SPECIFICATIONS#########################
+# 01 NAME: Standard Name for the star + planet name.
+# 02 MSINI: Minimum mass of planet. True masses are typically higher by about 15% due to the geometric effects of inclination. In units of Jupiter Mass.
+# 03 RA: Right Ascension in decimal form (hours). J2000, epoch 2000, from Simbad
+# 04 DEC: Declination in decimal form (degrees). J2000, epoch 2000, from Simbad
+# 05 A: Semi-Major Axis in AU
+# 06 PER: Orbital period in days
+# 07 ECC: Orbital eccentricity
+# 08 OM: Argument of periastron in degrees, the  angle between the line of nodes and the line from star to the planet at periastron, in the plane of the orbit.
+# 09 T0: Time of one periastron passage of the planet in JD.
+# 10 MSTAR: Estimated mass of the star, usually based on associating the star's effective temperature and luminosity with stellar models. In solar masses.
+# 11 STAR: Standard Name for the star
+# 12 RSTAR: Estimated radius of the star in solar radii.
+# 13 TEFF: Effective temperature of star in K.
+#####################################################################
+#####################################################################
+
+NAME,MSINI,RA,DEC,A,PER,ECC,OM,T0,MSTAR,STAR,RSTAR,TEFF
+,mjupiter,hr,deg,au,day,,deg,jd,msun,,rsun,k

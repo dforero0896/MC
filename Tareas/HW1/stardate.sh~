@@ -1,0 +1,14 @@
+#!/bin/bash
+echo ==============================================
+figlet Stardate
+echo ==============================================
+
+figlet $1
+
+history=$(awk -v year=$1 -F "\t" '{if($1 == year) print $2}' worldhistory.tsv)
+echo $history
+
+echo ==============================================
+
+echo LOOK AT THE FOLLOWING STARS:
+
