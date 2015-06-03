@@ -118,3 +118,21 @@ gnuplot> plot "joviansatellites.csv" using (cube($colx)):(quad($coly))
 1. Para una expresión regular que se refiera a los ṕrimeros cuatro caracteres del principio de la línes mas un espacio se debe buscar algo asi: `^.... `.
 2. Se agrega a la carpeta de ejemplos el tsv. Se utilizó `^ ` para buscar las lineas al inicio y `: ` para buscar los dos puntos y reemplazarlos por `\t`.
 3. http://pi.karmona.com/
+
+#Cuarta clase 3Jun2015
+
+Se pretende graficar el histórico de la tasa de cambio del Dólar en gnuplot.
+Se resaltan los comandos `w3m`, `set xdata time` usados a lo largo del ejemplo.
+
+Para hacer fit
+
+
+
+```
+
+gnuplot> fit func (x) "archivo.csv" using colx:coly via param1, param2
+gnuplot> plot 'galaxies.csv' using 2:3 
+gnuplot> replot m*x +b
+gnuplot> 
+```
+Encuentro como ventaja, gigantesca, de gnu sobre python, la facilidad de hacer gráficas simples en 3D.
