@@ -3,7 +3,7 @@
 ## Primer punto
 
 ```
-#!/bit/bash
+#!/bin/bash
 figlet arXiv
 
 echo =====================================

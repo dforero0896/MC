@@ -1,4 +1,4 @@
-#!/bit/bash
+#!/bin/bash
 figlet arXiv
 
 echo =====================================
