@@ -8,13 +8,16 @@ figlet arXiv
 
 echo =====================================
 echo Searching the arXiv for the new stuff.
+# Se busca en la página de astrofísica.
 echo http://arxiv.org/list/astro-ph/new
-
+# Se filtra el código fuente dejando solo las líneas que contengan la palabra a buscar y la palabra Title para devolver el título. Se guerda en un archivo temporal
 curl -s http://arxiv.org/list/astro-ph/new | grep -i  $1 | grep Title > archivoConLosTitulos.txt
 echo =====================================
 echo keyword: $1
 echo =====================================
+# Se cuentan el número de líneas (Títulos) que coinciden con la palabra buscada.
 nlines= wc -l archivoConLosTitulos.txt  | sed 's/archivoConLosTitulos.txt/articles found./g'
+# A lo anteriormente obtenido se le cambian los tags de HTML por guiones de manera que quede una lista. Se reconoce que es posible
 curl -s http://arxiv.org/list/astro-ph/new | grep -i  $1 | grep Title | sed 's/<span class="descriptor">Title:<\/span>/-/g'
 rm archivoConLosTitulos.txt
 ```
