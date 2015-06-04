@@ -37,4 +37,16 @@ Las siguientes fueron las expresiones regulares utilizadas (Hecho en gedit):
 + Para eliminar los espacios que separaban las columnas se busca ` *` y se reemplaza por `,`.
 + Para corregir el error de poner comas en el espacio que separa caracteres de los nombres de los planetas no nombrados, se busca `(\/[1-9][0-9][0-9][1-9]),S` y se reemplaza por `\1_S` dejando lo que originalmente era un espacio como un "_".
 + Para eliminar las "R" de la columna del periodo orbital se busca `(\d)R`y se reemplaza por `\1`.
-El archivo saturniansatellites.csv ya está limpio.
+El archivo saturniansatellites.csv ya está limpio. Se reconoce que hay columnas incorrectamente ubicadas, dada la gran cantidad de espacios vacíos en la columna del periodo de rotación, causando que la siguiente columna los llenara. Lo anterior no afecta el análisis que se hará a los datos. Mas es importante revisarlo más cuidadosamente.
+
+Para graficar se introdujo el siguiente código:
+
+```
+gnuplot> set datafile separator ","
+gnuplot> quad(x)=x**2
+gnuplot> cube(x)=x**3
+gnuplot> plot 'saturniansatellites.csv' using (quad($4)):(cube($3))
+gnuplot> 
+```
+Obteniendo una recta muy aceptable.
+
