@@ -1,0 +1,16 @@
+#Taller 3
+## Primer punto
+```
+#!/bin/bash
+
+for file in $(ls *.c);
+do
+    echo "#Nombre de archivo: $file" >> archivos.md
+    echo '```' >> archivos.md
+    cat $file >> archivos.md
+    echo '```' >> archivos.md
+
+done
+```
+
+##Segundo Punto

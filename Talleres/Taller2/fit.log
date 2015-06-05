@@ -1,0 +1,46 @@
+
+
+*******************************************************************************
+Wed Jun  3 21:22:30 2015
+
+
+FIT:    data read from 'saturniansatellites.csv' using (quad($4)):(cube($3))
+        format = x:z
+        #datapoints = 62
+        residuals are weighted equally (unit weight)
+
+function used for fitting: rect(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 4.5339e+16        delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 607246
+
+initial set of free parameter values
+
+m               = 1
+b               = 1
+
+After 3 iterations the fit converged.
+final sum of squares of residuals : 2.29847e+13
+rel. change during last iteration : -2.04266e-09
+
+degrees of freedom    (FIT_NDF)                        : 60
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 618933
+variance of residuals (reduced chisquare) = WSSR/ndf   : 3.83078e+11
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+m               = 32.4811          +/- 0.1319       (0.4061%)
+b               = 0.980313         +/- 1.133e+05    (1.155e+07%)
+
+
+correlation matrix of the fit parameters:
+
+               m      b      
+m               1.000 
+b              -0.720  1.000 

@@ -1,6 +1,28 @@
 
 #include <stdlib.h>
 #include <math.h>
+#include <stdio.h>
+
+double gaussrand(void);
+
+int main(void)
+{
+  double x;
+  double y;
+  double z;
+  int num = 1000;
+  int i = 1;
+  double norm;
+  for(; i <= num; i++);{
+    x=gaussrand();
+    y=gaussrand();
+    z=gaussrand();
+    norm=sqrt(x*x + y*y + z*z);
+    x=x/norm;
+    y=y/norm;
+    z=z/norm;
+    printf("%f, %f, %f\n", x, y, z);}
+}
 
 
 double gaussrand()
@@ -27,7 +49,3 @@ double gaussrand()
 
 	return X;
 }
-
-#define initx = gaussrand()
-#define inity = gaussrand()
-#define initz = gaussrand()
