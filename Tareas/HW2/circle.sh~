@@ -1,0 +1,7 @@
+#!/bin/bash
+
+gnuplot
+
+set param
+
+plot cos(t), sin(t)
