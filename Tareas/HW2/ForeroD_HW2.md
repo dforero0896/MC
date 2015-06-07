@@ -40,3 +40,37 @@ EOF
     sleep 1
 done
 ```
+
+##Segundo Punto
+
+
+
+
+
+## Tercer Punto
+
+### a.
+
+
+### b.
+```
+#!/bin/bash
+inicio=$1
+final=$2
+long=$(($final - $inicio + 1))
+filename=$3
+text=$(cat $filename)
+echo ${text:$inicio:$long}
+```
+
+### c.
+```
+sed -E 's/Page //g'
+sed -E 's/\d//g'
+xargs -s 500000
+sed -E 's/ //g'
+```
+
+Es una aproximación al código que se usó.
+
+### d.
