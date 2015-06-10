@@ -146,3 +146,28 @@ Con lammps se entra a la capeta src y se ejecuta `make ubuntu_simple`y se espera
 ## 9Jun2015
 Para el proyecto final me gustaría hacer un modelo para el movimiento de varios cuarpos como aplicación a la astrofísica. Puede también ser interesante hacer modelos relacionados a sismología. Me inclino por la primera opción. 
 Debe ser necesaria la solucion de ecuaciones diferenciales, me gustaría hacerlo en `Python`.
+
+#Sexta clase 10Jun2015
+
+En el Hands-On se requiere graficar un arreglo de gráficas que contengan figuras de Lissajous. La manera mas fácil de inicializar la matriz de ejes es con `Lisa, axes = subplots(5, 5, figsize=(10, 10))` donde se inicializan tanto el objeto figura, como el objeto `axes` que es una matriz de pares de ejes. Luego se hacen dos ciclos con vaiables `i` y `j` de manera que para cada par de ejes se grafique una figura de Lissajous distinta. Para los parámetros ` a` y `b` de las funciones `X` y `Y` se generan enteros aleatorios en un rango de 0 a 100 usando `a=np.random.randint(1, 100)`.
+En resumen, el código utilizado fue:
+```
+t=np.linspace(-pi, 2*pi, 150)
+Lisa, axes=subplots(5, 5, figsize=(10, 10))
+def X(a, t):
+    return np.cos(a*t)
+def Y(b, t):
+    return np.cos(b*t)
+for i in range(5):
+    for j in range(5):
+        
+        a=np.random.randint(1, 100)
+        b=np.random.randint(1, 100)
+        #print a, b
+        axes[i, j].set_xlim(-1, 1)
+        axes[i, j].set_ylim(-1, 1)
+        axes[i, j].plot(X(a, t), Y(b, t))
+        axes[i, j].axis("off")
+```
+Y se obtuvo la siguiente figura. La complejidad es debida a el alto valor de los parámetros `a` y `b` dado que su límite es 100.
+![La figura obtenida](https://raw.githubusercontent.com/dforero0896/MC/master/EjemplosClase/Lissajous.png?raw=tru)
