@@ -136,3 +136,13 @@ gnuplot> replot m*x +b
 gnuplot> 
 ```
 Encuentro como ventaja, gigantesca, de gnu sobre python, la facilidad de hacer gráficas simples en 3D.
+
+#Quinta clase 9Jun2015
+
+Tras leer un poco acerca de `make` se ve que es fundamental al trabajar grandes proyectos en los que se actualizan archivos y se hacen contribuciones constantemente.
+Todos los archivos son dependientes unos de otros, por lo que se debe hacer un Makefile que, al ejecutarse, actualice automaticamente todos los archivos y permita hacer cosntribuciones desde el punto en que se quedó. 
+Con lammps se entra a la capeta src y se ejecuta `make ubuntu_simple`y se espera a que compile.
+#Proyecto Final
+## 9Jun2015
+Para el proyecto final me gustaría hacer un modelo para el movimiento de varios cuarpos como aplicación a la astrofísica. Puede también ser interesante hacer modelos relacionados a sismología. Me inclino por la primera opción. 
+Debe ser necesaria la solucion de ecuaciones diferenciales, me gustaría hacerlo en `Python`.
