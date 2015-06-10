@@ -179,7 +179,8 @@ final=$2
 long=$(($final - $inicio + 1))
 filename=$3
 text=$(cat $filename)
-echo ${text:$inicio:$long}
+in=$(($inicio-1))
+echo ${text:$in:$long}
 ```
 
 ### c.
@@ -193,3 +194,26 @@ sed -E 's/ //g'
 Es una aproximación al código que se usó.
 
 ### d.
+```
+#!/bin/bash
+one=$(echo vhpuzsfgxedrmbjacyktqolwni)
+two=$(echo zyxwvutsrqponmlkjihgfedcba)
+filename=$1
+len=${#one}
+
+#for i in {1..10}; do
+    #for j in $(seq 0 $(($len-1))); do
+#	letter1=${one:$j:1}
+#	letter2=${two:$j:1}
+        
+#	echo $letter1 $letter2
+#	./flip.sh $letter1 $letter2 $filename > $j.txt
+       
+#	filename=$(echo $j.txt)
+         
+#	rm $j.txt
+ #   done
+
+./flip.sh v z $filename | ./flip.sh h y |  ./flip.sh p x | ./flip.sh u w | ./flip.sh z v | ./flip.sh s u | ./flip.sh f t | ./flip.sh g s | ./flip.sh x r | ./flip.sh e q | ./flip.sh d p | ./flip.sh r o | ./flip.sh m n | ./flip.sh b m | ./flip.sh j l | ./flip.sh a k | ./flip.sh c j | ./flip.sh y i | ./flip.sh k h | ./flip.sh t g | ./flip.sh q f | ./flip.sh o e | ./flip.sh l d | ./flip.sh w c | ./flip.sh n b | ./flip.sh i a | ./flip.sh v z | ./flip.sh h y |  ./flip.sh p x | ./flip.sh u w | ./flip.sh z v | ./flip.sh s u | ./flip.sh f t | ./flip.sh g s | ./flip.sh x r | ./flip.sh e q | ./flip.sh d p | ./flip.sh r o | ./flip.sh m n | ./flip.sh b m | ./flip.sh j l | ./flip.sh a k | ./flip.sh c j | ./flip.sh y i | ./flip.sh k h | ./flip.sh t g | ./flip.sh q f | ./flip.sh o e | ./flip.sh l d | ./flip.sh w c | ./flip.sh n b | ./flip.sh i a | ./flip.sh v z | ./flip.sh h y |  ./flip.sh p x | ./flip.sh u w | ./flip.sh z v | ./flip.sh s u | ./flip.sh f t | ./flip.sh g s | ./flip.sh x r | ./flip.sh e q | ./flip.sh d p | ./flip.sh r o | ./flip.sh m n | ./flip.sh b m | ./flip.sh j l | ./flip.sh a k | ./flip.sh c j | ./flip.sh y i | ./flip.sh k h | ./flip.sh t g | ./flip.sh q f | ./flip.sh o e | ./flip.sh l d | ./flip.sh w c | ./flip.sh n b | ./flip.sh i a | ./flip.sh v z | ./flip.sh h y |  ./flip.sh p x | ./flip.sh u w | ./flip.sh z v | ./flip.sh s u | ./flip.sh f t | ./flip.sh g s | ./flip.sh x r | ./flip.sh e q | ./flip.sh d p | ./flip.sh r o | ./flip.sh m n | ./flip.sh b m | ./flip.sh j l | ./flip.sh a k | ./flip.sh c j | ./flip.sh y i | ./flip.sh k h | ./flip.sh t g | ./flip.sh q f | ./flip.sh o e | ./flip.sh l d | ./flip.sh w c | ./flip.sh n b | ./flip.sh i a | ./flip.sh v z | ./flip.sh h y |  ./flip.sh p x | ./flip.sh u w | ./flip.sh z v | ./flip.sh s u | ./flip.sh f t | ./flip.sh g s | ./flip.sh x r | ./flip.sh e q | ./flip.sh d p | ./flip.sh r o | ./flip.sh m n | ./flip.sh b m | ./flip.sh j l | ./flip.sh a k | ./flip.sh c j | ./flip.sh y i | ./flip.sh k h | ./flip.sh t g | ./flip.sh q f | ./flip.sh o e | ./flip.sh l d | ./flip.sh w c | ./flip.sh n b | ./flip.sh i a | ./flip.sh v z | ./flip.sh h y |  ./flip.sh p x | ./flip.sh u w | ./flip.sh z v | ./flip.sh s u | ./flip.sh f t | ./flip.sh g s | ./flip.sh x r | ./flip.sh e q | ./flip.sh d p | ./flip.sh r o | ./flip.sh m n | ./flip.sh b m | ./flip.sh j l | ./flip.sh a k | ./flip.sh c j | ./flip.sh y i | ./flip.sh k h | ./flip.sh t g | ./flip.sh q f | ./flip.sh o e | ./flip.sh l d | ./flip.sh w c | ./flip.sh n b | ./flip.sh i a | ./flip.sh v z | ./flip.sh h y |  ./flip.sh p x | ./flip.sh u w | ./flip.sh z v | ./flip.sh s u | ./flip.sh f t | ./flip.sh g s | ./flip.sh x r | ./flip.sh e q | ./flip.sh d p | ./flip.sh r o | ./flip.sh m n | ./flip.sh b m | ./flip.sh j l | ./flip.sh a k | ./flip.sh c j | ./flip.sh y i | ./flip.sh k h | ./flip.sh t g | ./flip.sh q f | ./flip.sh o e | ./flip.sh l d | ./flip.sh w c | ./flip.sh n b | ./flip.sh i a | ./flip.sh v z | ./flip.sh h y |  ./flip.sh p x | ./flip.sh u w | ./flip.sh z v | ./flip.sh s u | ./flip.sh f t | ./flip.sh g s | ./flip.sh x r | ./flip.sh e q | ./flip.sh d p | ./flip.sh r o | ./flip.sh m n | ./flip.sh b m | ./flip.sh j l | ./flip.sh a k | ./flip.sh c j | ./flip.sh y i | ./flip.sh k h | ./flip.sh t g | ./flip.sh q f | ./flip.sh o e | ./flip.sh l d | ./flip.sh w c | ./flip.sh n b | ./flip.sh i a | ./flip.sh v z | ./flip.sh h y |  ./flip.sh p x | ./flip.sh u w | ./flip.sh z v | ./flip.sh s u | ./flip.sh f t | ./flip.sh g s | ./flip.sh x r | ./flip.sh e q | ./flip.sh d p | ./flip.sh r o | ./flip.sh m n | ./flip.sh b m | ./flip.sh j l | ./flip.sh a k | ./flip.sh c j | ./flip.sh y i | ./flip.sh k h | ./flip.sh t g | ./flip.sh q f | ./flip.sh o e | ./flip.sh l d | ./flip.sh w c | ./flip.sh n b | ./flip.sh i a | ./flip.sh v z | ./flip.sh h y |  ./flip.sh p x | ./flip.sh u w | ./flip.sh z v | ./flip.sh s u | ./flip.sh f t | ./flip.sh g s | ./flip.sh x r | ./flip.sh e q | ./flip.sh d p | ./flip.sh r o | ./flip.sh m n | ./flip.sh b m | ./flip.sh j l | ./flip.sh a k | ./flip.sh c j | ./flip.sh y i | ./flip.sh k h | ./flip.sh t g | ./flip.sh q f | ./flip.sh o e | ./flip.sh l d | ./flip.sh w c | ./flip.sh n b | ./flip.sh i a
+#done
+```
