@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+void main(){
+  double lenFt;
+  double widIn;
+  double lenIn;
+  double areaYd;
+  
+  scanf("%d", &dIn);
+  dYd=0.0277778*dIn;
+  dFt=0.0833333*dIn;
+  printf("The distance in inches is: %d\n", dIn);
+  printf("The distance in yards is: %f\n", dYd);
+  printf("The distance in feet is: %f\n", dFt);
+		
+}

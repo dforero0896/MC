@@ -1,17 +1,21 @@
 #!/bin/bash
 one=$(echo vhpuzsfgxedrmbjacyktqolwni)
 two=$(echo zyxwvutsrqponmlkjihgfedcba)
-letter1=$1
-letter2=$2
-file=$3
-
+file=$1
 len=${#one}
-lenf=$(($len+1))
 
-for i in [1..10]; do
+for i in {1..10}; do
     for j in $(seq 0 $len); do
-	$j
+	letter1=${one:$j:1}
+	letter2=${two:$j:1}
+        
+	echo $letter1 $letter2
+	text=$(./flip.sh $letter1 $letter2 $file)
+	#file=$(echo $text)
+	echo $text
+       
+	
     done
-    sed "s/$letter1/TEMPORARYONE/g;s/$letter2/TEMPORARYTWO/g;s/TEMPORARYONE/$letter2/g;s/TEMPORARYTWO/$letter1/g" $file
-
+  
 done
+
