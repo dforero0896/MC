@@ -1,0 +1,28 @@
+
+Errata
+======
+
+As errors come to light, they will be listed here and the software updated.
+
+
+---
+
+
+(January 22, 2006)
+
+
+p.193 - function ApplyBoundaryCond [pr_07_3.c]:
+    replace both lines 10 and 15 by -
+        VWrap (mol[n].r, x);
+
+p.346 - eq (13.2.2): lower bound of first sum is '1', not 'i'
+
+p.410 - function DeleteEvent [pr_14_1.c, pr_14_2.c, pr_15_1.c]:
+    replace line 18 by -
+        if (evTree[idq].right >= 0) evTree[evTree[idq].right].up = idr;
+    replace line 27 by -
+        if (idq >= 0) evTree[idq].up = idp;
+
+
+---
+
