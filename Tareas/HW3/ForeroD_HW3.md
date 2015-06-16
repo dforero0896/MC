@@ -1,4 +1,4 @@
-#Tercera Tarea
+﻿#Tercera Tarea
 ##Primer Punto
 
 
@@ -6,6 +6,7 @@
 
 
 ##Tercer Punto
+###a.
 ```
 #Se importan los paquetes necesarias.
 %pylab inline
@@ -50,3 +51,40 @@ for i in range(1, 100):
 ``` 
 Nótese que se ha cambiado la función encontrada en el libro de Landau por la encontrada en el siguiente foro : http://stackoverflow.com/questions/19990274/sin-with-taylor-series-in-python.
 Soluciona el problema que se presentaba: División entre cero.
+
+###b.
+```
+#Se crea el vector para el punto b
+x=np.linspace(0., 45., 100)
+#Se evalúa la función incluida en numpy.
+num=np.sin(x)
+#Se evalúa la función definida anteriormete con un número lo suficientemente grande de iteraciones.
+mac=numsin(x, 100000)
+#Se imprime la diferencia entre las dos funciones.
+print abs(num-mac)
+#Se imprime la prueba lógica mediante la cual se revisa que todos los elementos en el vector de diferencias sean menor a 0.01.
+print abs(num-mac).all < 0.01
+#Se crea un ciclo que evalúe la condición anteriormente descrita.
+for i in range(1000):
+    iteration = i
+    mac=numsin(x, i)
+    while abs(mac-num).all<0.01:
+        print iteration
+#Se hace un ciclo que grafique los i primeros órdenes. Ahora se graficará hasta x>45, para ver qué ocurre.
+Divergencia, ax=subplots(1, 2, figsize=(20, 7))
+ax[0].set_xlim(30, 41)
+ax[0].set_ylim(-2, 2)
+ax[1].set_xlim(0, 51)
+ax[1].set_ylim(-2, 2)
+#Se vectoriza la función.
+numsin=vectorize(FuncSen)#, excluded=['orden'])
+#for i in range(1, 100):
+#    ax.plot(L, numsin(L, i))
+ax[0].plot(L, numsin(L, 100))
+ax[1].plot(L, numsin(L, 100))
+ax[0].plot(L, sin(L))
+ax[1].plot(L, sin(L))
+
+#Es evidente que la serie comienza a diverger desde x = 35 más o menos, razón por la cual es imposible, para valores mayores a éste
+#que el ciclo en el bloque anterior no de respuesta para el número de términos necesarios para que la serie sea lo suficientemente 
+#acertada en todo este intervalo. Se muestra en azul la serie de Maclaurin y en rojo la función sen(x) definida en numpy.
