@@ -14,8 +14,8 @@ import math
 L=np.linspace(-pi, 100, 1000)
 #Se define el estilo XKCD
 plt.xkcd()
-#Se define una funci髇 que calcula la serie de Maclaurin para sen(x) a manera de 
-#prueba y comparaci髇.
+#Se define una funci贸n que calcula la serie de Maclaurin para sen(x) a manera de 
+#prueba y comparaci贸n.
 def FuncSenFactorial(x, orden):
     n=1
     total=0  
@@ -24,14 +24,14 @@ def FuncSenFactorial(x, orden):
         total+=a
         n += 1
     return total
-#Se hace un ciclo que grafique los i primeros 髍denes.
+#Se hace un ciclo que grafique los i primeros 贸rdenes.
 Funcsenfac, ax=subplots(1, 1, figsize=(10, 7))
 ax.set_xlim(0, 20)
 ax.set_ylim(-2, 2)
 for i in range(2, 30):
    ax.plot(L, FuncSenFactorial(L, i)) 
-#Se define una funci髇 que calcula la serie de Maclaurin para sin(x) sin usar
-#la funci髇 factorial.
+#Se define una funci贸n que calcula la serie de Maclaurin para sin(x) sin usar
+#la funci贸n factorial.
 def FuncSen(x, orden):
     term=x
     total=term
@@ -39,12 +39,14 @@ def FuncSen(x, orden):
         term*=-x**2/((2*n+1)*(2*n))
         total+=term
     return total
-#Se hace un ciclo que grafique los i primeros 髍denes.
+#Se hace un ciclo que grafique los i primeros 贸rdenes.
 Funcsen, ax=subplots(1, 1, figsize=(10, 7))
 ax.set_xlim(0, 20)
 ax.set_ylim(-2, 2)
-#Se vectoriza la funci髇.
+#Se vectoriza la funci贸n.
 numsin=vectorize(FuncSen)#, excluded=['orden'])
 for i in range(1, 100):
     ax.plot(L, numsin(L, i))
 ``` 
+N贸tese que se ha cambiado la funci贸n encontrada en el libro de Landau por la encontrada en el siguiente foro : http://stackoverflow.com/questions/19990274/sin-with-taylor-series-in-python.
+Soluciona el problema que se presentaba: Divisi贸n entre cero.
