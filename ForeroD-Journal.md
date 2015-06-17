@@ -147,7 +147,7 @@ Con lammps se entra a la capeta src y se ejecuta `make ubuntu_simple`y se espera
 Para el proyecto final me gustaría hacer un modelo para el movimiento de varios cuerpos como aplicación a la astrofísica. Puede también ser interesante hacer modelos relacionados a sismología. Me inclino por la primera opción. 
 Debe ser necesaria la solución de ecuaciones diferenciales, me gustaría hacerlo en `Python`.
 ## 16Jun2015
-
+Debido a que en clase ya se abordó el tema de los n cuerpos, se ha decidido hacer modelos y animaciones que describan los choques entre ondas o paquetes de ondas. La descripción más a fondo de dicho proyecto se encuentra en la siguiente página: http://www.physics.orst.edu/~rubin/nacphy/ComPhys/PACKETS/. Ahí se ha desarrollado el modelo en C, la idea es realizarlo en Python.
 #Sexta clase 10Jun2015
 
 En el Hands-On se requiere graficar un arreglo de gráficas que contengan figuras de Lissajous. La manera mas fácil de inicializar la matriz de ejes es con `Lisa, axes = subplots(5, 5, figsize=(10, 10))` donde se inicializan tanto el objeto figura, como el objeto `axes` que es una matriz de pares de ejes. Luego se hacen dos ciclos con vaiables `i` y `j` de manera que para cada par de ejes se grafique una figura de Lissajous distinta. Para los parámetros ` a` y `b` de las funciones `X` y `Y` se generan enteros aleatorios en un rango de 0 a 100 usando `a=np.random.randint(1, 100)`.
