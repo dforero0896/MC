@@ -118,3 +118,30 @@ ax[1].plot(L, sin(L))
 #Es evidente que la serie comienza a diverger desde x = 35 más o menos, razón por la cual es imposible, para valores mayores a éste
 #que el ciclo en el bloque anterior no de respuesta para el número de términos necesarios para que la serie sea lo suficientemente 
 #acertada en todo este intervalo. Se muestra en azul la serie de Maclaurin y en rojo la función sen(x) definida en numpy.
+#Para solucionar el problema es necesario tomar una serie de Taylor con un centro mucho más cercano al lugar de la divergencia, de manera 
+#que el radio de convergencia cubra el intervalo que se quiere visualizar.
+
+#Se genera una función cuyo radio de convergencia incluya el intervalo que se desea.
+def FuncSenTaylor(x, orden):
+    n=1
+    total=0  
+    while n<orden:
+        a = (-1)**(n-1)*(((x-10*pi)**(2*n-1))/(math.factorial(2*n-1)))
+        total+=a
+        n += 1
+    return total
+DivergenciaT, ax=subplots(1, 2, figsize=(20, 7))
+ax[0].set_xlim(30, 41)
+ax[0].set_ylim(-2, 2)
+ax[1].set_xlim(0, 51)
+ax[1].set_ylim(-2, 2)
+#Se vectoriza la función.
+numsinT=vectorize(FuncSenTaylor)#, excluded=['orden'])
+#for i in range(1, 100):
+#    ax.plot(L, numsin(L, i))
+ax[0].plot(L, numsinT(L, 80))
+ax[1].plot(L, numsinT(L, 80))
+ax[0].plot(L, sin(L))
+ax[1].plot(L, sin(L))
+#Se ve que, al mover el centro del radio de convergencia de la serie se soluciona el problema de la divergencia en los extremos.
+```
