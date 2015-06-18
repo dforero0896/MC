@@ -1,7 +1,37 @@
 ﻿#Tercera Tarea
 ##Primer Punto
+```
+copo="AIAIA"
+orden = 0
+'''
+if(orden==0):
+    t.down() 
 
+    t.forward(300) #A
 
+    t.left(120) #I
+
+    t.forward(300) #A
+
+    t.left(120)#I
+
+    t.forward(300) #A
+'''
+#elif(orden!=0):
+for i in range(orden):
+    copo=copo.replace("A", "ADAIADA")
+for j in range(len(copo)):
+    if (copo[j]=="A"):
+        t.forward(100/3**(orden-1))
+    elif(copo[j]=="D"):
+        t.right(60)
+    elif(copo[j]=="I"):
+        t.left(120)
+
+t.done()  
+```
+Se inspiró en el código encontrado en: https://commons.wikimedia.org/wiki/Koch_snowflake#Python
+Se explica el objetivo de éste y se hacen pequeñas modificaciones.
 ##Segundo Punto 
 
 
