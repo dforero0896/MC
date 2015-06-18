@@ -33,7 +33,7 @@ t.done()
 Se inspiró en el código encontrado en: https://commons.wikimedia.org/wiki/Koch_snowflake#Python
 Se explica el objetivo de éste y se hacen pequeñas modificaciones.
 ##Segundo Punto 
-
+### El informe se encuentra en el archivo Rayleigh.ipynb.
 
 ##Tercer Punto
 ###a.
