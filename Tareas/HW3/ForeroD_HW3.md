@@ -1,8 +1,11 @@
 ﻿#Tercera Tarea
 ##Primer Punto
 ```
+#Se define una cadena de caracteres para la cual cada letra debe ser el 'estímulo' antes mencionado.
 copo="AIAIA"
-orden = 0
+#Se define el orden del fractal que se pretende dibujar
+orden = 5
+#La siguiente sección de código se creó para asegurar que el orden 0 fuera siempre el triángulo
 '''
 if(orden==0):
     t.down() 
@@ -16,10 +19,15 @@ if(orden==0):
     t.left(120)#I
 
     t.forward(300) #A
+
+elif(orden!=0):
 '''
-#elif(orden!=0):
+#Lo anterior resultó innecesario, por lo cual lo siguiente define que se reemplace la instrucción de 'Adelante' por las demás ya mencionadas
+#(orden) veces.
 for i in range(orden):
     copo=copo.replace("A", "ADAIADA")
+#Se crea un ciclo que para cada índice en la longitud de la cadena de instrucciones, ejecute la respectiva acción en forma t.xxx al
+#encontrar que en el indice j, la letra corresponde a A para adelante, I para izquierda o D para derecha.
 for j in range(len(copo)):
     if (copo[j]=="A"):
         t.forward(100/3**(orden-1))
