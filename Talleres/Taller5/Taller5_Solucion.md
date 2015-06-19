@@ -18,3 +18,8 @@ Haga una copia de este archivo en su repositorio de GitHub en la carpeta /MC/Tal
 
 
 **Al terminar la clase ejecute `lottery.sh` para saber si su taller va a ser revisado.**
+
+
+## Primer punto:
+https://github.com/dforero0896/MC/blob/master/Talleres/Taller5/gibbs.ipynb
+
