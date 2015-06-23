@@ -308,4 +308,26 @@ print Tabla
  
  ```
  
+ #Décima clase 23Jun2015
+ 
+ ##Derivación numérica:
+ 
+ Es importante tener en cuenta las distintas opciones, como lo son *forward, backward y central differences* de las cuales el menor error resulta de las *central differences*. Los errores a su vez, pueden ser mejoradas realizando una extraólación haciendo que el error caiga más rápidamente al disminuir el valor de *h*.
+ 
+ En el Hands On se trata de limpiar la señal de forma que se eliminen altas frecuencias. Se encontraron problemas al realizar el filtro, dado que la información no parece coincidir con los datos originales.
+ Se usó el siguiente código.
+ ```
+ 
+ mmean_fft=np.abs(fft(mmean))
+freq = fftfreq(len(mmean), dt) # frecuencias
+
+mmean_fft[np.abs(freq) > 110] = 0
+mmean_clean=ifft(mmean_fft)
+plt.figure(figsize=(10, 7))
+plt.plot(x,np.real(mmean_clean),label=u'Señal filtrada')
+
+```
+
+
+ 
  
