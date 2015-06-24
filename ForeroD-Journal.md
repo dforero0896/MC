@@ -329,7 +329,3 @@ plt.plot(x,np.real(mmean_clean),label=u'Señal filtrada')
 ```
 #Undécima Clase 24Jun2015
 
-
-
- 
- 
