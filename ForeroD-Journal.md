@@ -327,6 +327,8 @@ plt.figure(figsize=(10, 7))
 plt.plot(x,np.real(mmean_clean),label=u'Señal filtrada')
 
 ```
+#Undécima Clase 24Jun2015
+
 
 
  
