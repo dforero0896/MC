@@ -1,4 +1,7 @@
+
 ﻿#Primera Clase 27May2015
+
+
 ¡Hola Mundo, aquí estoy comenzando el curso de **Métodos Computacionales**-
 
 Herramientas del Curso:
@@ -28,7 +31,7 @@ Se requiere:
 2. git commit
 3. Poner comentario acerca del commit
 4. Para subirlo: git push origin master.
-5. 
+5.
 
 Leer:
 + Pro Git págs: 27-34
@@ -43,7 +46,7 @@ Por revisar: ssh
 
 Utilizar variables de bash en awk `awk -v varawk=$varbash` con `varbash` la variable de bash que se desea recuperar.
 
-Para declarar variables mas complejas en bash `var=$(echo $((a+b)))` 
+Para declarar variables mas complejas en bash `var=$(echo $((a+b)))`
 
 Dado que estoy trabajando en mi propio equipo, fue necesario usar ssh para entrar a compufísica desde mi terminal. Se usó `ssh df.forero10@compufi6.uniandes.edu.co`. La IP de compufísica es: 157.253.160.142 en caso de ser necesaria.
 
@@ -56,7 +59,7 @@ A continuación se muestran los resultados de la indagación o "paleontología" 
 
 ## Expresiones regulares
 
-Se usan para la limpieza de archivos de datos. Ejemplo: joviansatellites.csv 
+Se usan para la limpieza de archivos de datos. Ejemplo: joviansatellites.csv
 + \^ inicio línea
 + \$ final línea
 + \. cualquier caracter
@@ -89,7 +92,7 @@ Se usan para la limpieza de archivos de datos. Ejemplo: joviansatellites.csv
 
 
 ` set grid`
-``` 
+```
 set parametric
 plot cos(t), sin(t)
 ```
@@ -131,20 +134,20 @@ Para hacer fit
 ```
 
 gnuplot> fit func (x) "archivo.csv" using colx:coly via param1, param2
-gnuplot> plot 'galaxies.csv' using 2:3 
+gnuplot> plot 'galaxies.csv' using 2:3
 gnuplot> replot m*x +b
-gnuplot> 
+gnuplot>
 ```
 Encuentro como ventaja, gigantesca, de gnu sobre python, la facilidad de hacer gráficas simples en 3D.
 
 #Quinta clase 9Jun2015
 
 Tras leer un poco acerca de `make` se ve que es fundamental al trabajar grandes proyectos en los que se actualizan archivos y se hacen contribuciones constantemente.
-Todos los archivos son dependientes unos de otros, por lo que se debe hacer un Makefile que, al ejecutarse, actualice automaticamente todos los archivos y permita hacer cosntribuciones desde el punto en que se quedó. 
+Todos los archivos son dependientes unos de otros, por lo que se debe hacer un Makefile que, al ejecutarse, actualice automaticamente todos los archivos y permita hacer cosntribuciones desde el punto en que se quedó.
 Con lammps se entra a la capeta src y se ejecuta `make ubuntu_simple`y se espera a que compile.
 #Proyecto Final
 ## 9Jun2015
-Para el proyecto final me gustaría hacer un modelo para el movimiento de varios cuerpos como aplicación a la astrofísica. Puede también ser interesante hacer modelos relacionados a sismología. Me inclino por la primera opción. 
+Para el proyecto final me gustaría hacer un modelo para el movimiento de varios cuerpos como aplicación a la astrofísica. Puede también ser interesante hacer modelos relacionados a sismología. Me inclino por la primera opción.
 Debe ser necesaria la solución de ecuaciones diferenciales, me gustaría hacerlo en `Python`.
 ## 16Jun2015
 Debido a que en clase ya se abordó el tema de los n cuerpos, se ha decidido hacer modelos y animaciones que describan los choques entre ondas o paquetes de ondas. La descripción más a fondo de dicho proyecto se encuentra en la siguiente página: http://www.physics.orst.edu/~rubin/nacphy/ComPhys/PACKETS/. Ahí se ha desarrollado el modelo en C, la idea es realizarlo en Python.
@@ -161,7 +164,7 @@ def Y(b, t):
     return np.cos(b*t)
 for i in range(5):
     for j in range(5):
-        
+
         a=np.random.randint(1, 100)
         b=np.random.randint(1, 100)
         #print a, b
@@ -305,19 +308,19 @@ print Tabla
  [  4.25959596e+00   5.48164883e+03]
  [  4.27979798e+00   5.40438925e+03]
  [  4.30000000e+00   5.32857475e+03]]
- 
+
  ```
- 
+
  #Décima clase 23Jun2015
- 
+
  ##Derivación numérica:
- 
+
  Es importante tener en cuenta las distintas opciones, como lo son *forward, backward y central differences* de las cuales el menor error resulta de las *central differences*. Los errores a su vez, pueden ser mejoradas realizando una extraólación haciendo que el error caiga más rápidamente al disminuir el valor de *h*.
- 
+
  En el Hands On se trata de limpiar la señal de forma que se eliminen altas frecuencias. Se encontraron problemas al realizar el filtro, dado que la información no parece coincidir con los datos originales.
  Se usó el siguiente código.
  ```
- 
+
  mmean_fft=np.abs(fft(mmean))
 freq = fftfreq(len(mmean), dt) # frecuencias
 
@@ -328,4 +331,3 @@ plt.plot(x,np.real(mmean_clean),label=u'Señal filtrada')
 
 ```
 #Undécima Clase 24Jun2015
-
