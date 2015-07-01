@@ -151,6 +151,10 @@ Para el proyecto final me gustaría hacer un modelo para el movimiento de varios
 Debe ser necesaria la solución de ecuaciones diferenciales, me gustaría hacerlo en `Python`.
 ## 16Jun2015
 Debido a que en clase ya se abordó el tema de los n cuerpos, se ha decidido hacer modelos y animaciones que describan los choques entre ondas o paquetes de ondas. La descripción más a fondo de dicho proyecto se encuentra en la siguiente página: http://www.physics.orst.edu/~rubin/nacphy/ComPhys/PACKETS/. Ahí se ha desarrollado el modelo en C, la idea es realizarlo en Python.
+
+##1Jul2015
+
+Se busca información acerca de paquetes de ondas y su generación computaiconalmente, sería interesante ver lo que ocurre al hacer pasar el paquete de ondas a través de un cierto obstáculo.
 #Sexta clase 10Jun2015
 
 En el Hands-On se requiere graficar un arreglo de gráficas que contengan figuras de Lissajous. La manera mas fácil de inicializar la matriz de ejes es con `Lisa, axes = subplots(5, 5, figsize=(10, 10))` donde se inicializan tanto el objeto figura, como el objeto `axes` que es una matriz de pares de ejes. Luego se hacen dos ciclos con vaiables `i` y `j` de manera que para cada par de ejes se grafique una figura de Lissajous distinta. Para los parámetros ` a` y `b` de las funciones `X` y `Y` se generan enteros aleatorios en un rango de 0 a 100 usando `a=np.random.randint(1, 100)`.
@@ -331,3 +335,62 @@ plt.plot(x,np.real(mmean_clean),label=u'Señal filtrada')
 
 ```
 #Undécima Clase 24Jun2015
+
+Se ven los métodos de Euler, Midpoint, y Runge-Kutta. Éste último consiste en  hacer una función que retorne la derivada de la ecuación diferencial (lado izquierdo de la ecuación) es importante tener en cuenta que permite resolver ecuaciones diferenciales de primer orden y sistemas de éstos.
+
+#Duodécima Clase 30Jun2015
+
+Un método adaptativo es diferente a los ya vistos en que se hacen más pasos intermedios para ver, en el paso final, la discrepancia entre los dos resultados que se define como error local (`np.abs(Y1-Y)/2`). Se pretende que el error acumulado no sea mayor que un cierto valor.
++ Se toma la función y se hacen doe saltos en Deltat y uno en 2*Deltat.
++ Se calcula el error local.
++ Si el error local es muy elevado se disminuye el timestep `h` en una cierta medida.
+
+###Método de Adams-Bashfort
+A la raíz, se utilizan las derivadas en tiempos anteriores al tiempo `t`, interpolando y posteriormente extrapolando para `t+Deltat`.
+##En `scipy`
+scipy.integrate.odeint(funcion, condinit, tiempos)
+la función debe ser de dos variables ( `f(Y, t)`) asi no sea realmente necesario
+
+#Décimotercera Clase 1Jul2015
+
+Se repasa un poco de `sympy`.
+```
+from sympy import *
+init_printing(use_unicode=True)
+
+x=symbols("x")
+diff(x**3, x)
+integrate(sin(x**2), (x, 1, 2)) #para integrales definidas.
+```
+
+Para el Hands-On se debió demsotrar cada ecuacipon para el método de Adams-Bashforth de segundo, tercer y cuarto orden. Cabe anotar que para cada polinomio se construye evaluando multiplicando `fnA*(t-tndiffA)*(t-tndiffA)/((tnA-tndiffA)*(tnA-tndiffA))`
+
+Para el segundo orden:
+```
+t, fn, fn1, h, tn, tn1 = symbols("t fn fn1 h tn tn1")
+p=symbols("p")
+p=fn1*(t-tn)/(tn1-tn) + fn*(t-tn1)/(tn-tn1)
+tn1=tn-h
+simplify(integrate(fn1*(t-tn)/(tn1-tn) + fn*(t-tn1)/(tn-tn1), (t, tn, tn+h)))
+```
+
+Para el tercer orden:
+```
+t, fn, fn1, fn2, h, tn, tn1, tn2 = symbols("t fn fn1 fn2 h tn tn1 tn2")
+p=symbols("p")
+p=fn1*(t-tn)*(t-tn2)/((tn1-tn)*(tn1-tn2)) + fn*(t-tn1)*(t-tn2)/((tn-tn1)*(tn-tn2)) + fn2*(t-tn1)*(t-tn)/((tn2-tn1)*(tn2-tn))
+tn1=tn-h
+tn2=tn-2*h
+simplify(integrate(fn1*(t-tn)*(t-tn2)/((tn1-tn)*(tn1-tn2)) + fn*(t-tn1)*(t-tn2)/((tn-tn1)*(tn-tn2)) + fn2*(t-tn1)*(t-tn)/((tn2-tn1)*(tn2-tn)), (t, tn, tn+h)))
+```
+
+Para el cuarto orden:
+```
+t, fn, fn1, fn2, fn3, h, tn, tn1, tn2, tn3 = symbols("t fn fn1 fn2 fn3 h tn tn1 tn2 tn3")
+p=symbols("p")
+p=fn1*(t-tn)*(t-tn2)*(t-tn3)/((tn1-tn)*(tn1-tn2)*(tn1-tn3)) + fn*(t-tn1)*(t-tn2)*(t-tn3)/((tn-tn1)*(tn-tn2)*(tn-tn3)) + fn2*(t-tn1)*(t-tn)*(t-tn3)/((tn2-tn1)*(tn2-tn)*(tn2-tn3)) + fn3*(t-tn)*(t-tn1)*(t-tn2)/((tn3-tn)*(tn3-tn1)*(tn3-tn2))
+tn1=tn-h
+tn2=tn-2*h
+tn3=tn-3*h
+simplify(integrate(fn1*(t-tn)*(t-tn2)*(t-tn3)/((tn1-tn)*(tn1-tn2)*(tn1-tn3)) + fn*(t-tn1)*(t-tn2)*(t-tn3)/((tn-tn1)*(tn-tn2)*(tn-tn3)) + fn2*(t-tn1)*(t-tn)*(t-tn3)/((tn2-tn1)*(tn2-tn)*(tn2-tn3)) + fn3*(t-tn)*(t-tn1)*(t-tn2)/((tn3-tn)*(tn3-tn1)*(tn3-tn2)), (t, tn, tn+h)))
+```
