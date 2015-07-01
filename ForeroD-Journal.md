@@ -145,16 +145,6 @@ Encuentro como ventaja, gigantesca, de gnu sobre python, la facilidad de hacer g
 Tras leer un poco acerca de `make` se ve que es fundamental al trabajar grandes proyectos en los que se actualizan archivos y se hacen contribuciones constantemente.
 Todos los archivos son dependientes unos de otros, por lo que se debe hacer un Makefile que, al ejecutarse, actualice automaticamente todos los archivos y permita hacer cosntribuciones desde el punto en que se quedó.
 Con lammps se entra a la capeta src y se ejecuta `make ubuntu_simple`y se espera a que compile.
-#Proyecto Final
-## 9Jun2015
-Para el proyecto final me gustaría hacer un modelo para el movimiento de varios cuerpos como aplicación a la astrofísica. Puede también ser interesante hacer modelos relacionados a sismología. Me inclino por la primera opción.
-Debe ser necesaria la solución de ecuaciones diferenciales, me gustaría hacerlo en `Python`.
-## 16Jun2015
-Debido a que en clase ya se abordó el tema de los n cuerpos, se ha decidido hacer modelos y animaciones que describan los choques entre ondas o paquetes de ondas. La descripción más a fondo de dicho proyecto se encuentra en la siguiente página: http://www.physics.orst.edu/~rubin/nacphy/ComPhys/PACKETS/. Ahí se ha desarrollado el modelo en C, la idea es realizarlo en Python.
-
-##1Jul2015
-
-Se busca información acerca de paquetes de ondas y su generación computaiconalmente, sería interesante ver lo que ocurre al hacer pasar el paquete de ondas a través de un cierto obstáculo.
 #Sexta clase 10Jun2015
 
 En el Hands-On se requiere graficar un arreglo de gráficas que contengan figuras de Lissajous. La manera mas fácil de inicializar la matriz de ejes es con `Lisa, axes = subplots(5, 5, figsize=(10, 10))` donde se inicializan tanto el objeto figura, como el objeto `axes` que es una matriz de pares de ejes. Luego se hacen dos ciclos con vaiables `i` y `j` de manera que para cada par de ejes se grafique una figura de Lissajous distinta. Para los parámetros ` a` y `b` de las funciones `X` y `Y` se generan enteros aleatorios en un rango de 0 a 100 usando `a=np.random.randint(1, 100)`.
@@ -394,3 +384,27 @@ tn2=tn-2*h
 tn3=tn-3*h
 simplify(integrate(fn1*(t-tn)*(t-tn2)*(t-tn3)/((tn1-tn)*(tn1-tn2)*(tn1-tn3)) + fn*(t-tn1)*(t-tn2)*(t-tn3)/((tn-tn1)*(tn-tn2)*(tn-tn3)) + fn2*(t-tn1)*(t-tn)*(t-tn3)/((tn2-tn1)*(tn2-tn)*(tn2-tn3)) + fn3*(t-tn)*(t-tn1)*(t-tn2)/((tn3-tn)*(tn3-tn1)*(tn3-tn2)), (t, tn, tn+h)))
 ```
+
+
+
+
+
+
+
+
+
+
+
+
+#Proyecto Final
+## 9Jun2015
+Para el proyecto final me gustaría hacer un modelo para el movimiento de varios cuerpos como aplicación a la astrofísica. Puede también ser interesante hacer modelos relacionados a sismología. Me inclino por la primera opción.
+Debe ser necesaria la solución de ecuaciones diferenciales, me gustaría hacerlo en `Python`.
+## 16Jun2015
+Debido a que en clase ya se abordó el tema de los n cuerpos, se ha decidido hacer modelos y animaciones que describan los choques entre ondas o paquetes de ondas. La descripción más a fondo de dicho proyecto se encuentra en la siguiente página: http://www.physics.orst.edu/~rubin/nacphy/ComPhys/PACKETS/. Ahí se ha desarrollado el modelo en C, la idea es realizarlo en Python.
+
+##1Jul2015
+
+Se busca información acerca de paquetes de ondas y su generación computaiconalmente, sería interesante ver lo que ocurre al hacer pasar el paquete de ondas a través de un cierto obstáculo.
+El paquete de onda Gaussiano pretende modelar una partícula y se define según lo encontrado [acá](http://helium.bradley.edu/PICUP/tdse_gaussianWavePacket.php).
+Sujeto a limitaciones de tiempo, se podría intentar solucionar la ecuación de Schrödinger independiente del tiempo, y obtener así distintos paquetes de onda, de donde se podrán extraer funciones de probabilidad.
