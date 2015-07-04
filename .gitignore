@@ -5,3 +5,6 @@ Tareas/HW1/Hyg.csv
 *.db
 Tareas/HW1/hyg.csv
 Talleres/Taller6/.ipynb_checkpoints/Taller_6-checkpoint.ipynb
+*.aux
+*.log
+*.gz

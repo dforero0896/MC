@@ -1,0 +1,39 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\setlength{\parindent}{0cm}
+\title{Primer Documento Proyecto Final}
+\author{Daniel Forero}
+\date{\today}
+\usepackage{graphicx}
+\usepackage{anysize}
+\marginsize{3cm}{2.5cm}{2.5cm}{3cm}
+\begin{document}
+\maketitle
+\section{Objetivos}
+\subsection{Principales}
+\begin{enumerate}
+\item Modelar paquetes de onda que respondan a parámetros reales encontrados en las funciones de onde de una partícula.
+\item Visualizar el comportamiento de dichos paquetes de onda en distintas situaciones o bajo distintos potenciales. Haciendo necesaria la solución de la ecuación de Schrödinger.
+\item Visualizar el comportamiento de éstos al colisionar con otro similar, o un obstáculo.
+\item Extraer información del sistema tal como masa, momento lineal, funciones de probabilidad, etc. para distintos momentos.
+\end{enumerate}
+
+\subsection{Secundarios}
+\begin{enumerate}
+	\item Hacer uso de diversas herramientas computacionales en el análisis de las propiedades de los paquetes de ondas tal y como lo son solución numérica de ecuaciones diferenciales y transformadas de Fourier.
+	\item Hacer uso de la transformada ondícula (\textit{wavelet}) y comparar el resultado con la información obtenida de la transformada de Fourier.
+\end{enumerate}
+
+
+\section{Marco Teórico}
+La dualidad onda-partícula de la materia permite analizar sistemas físicos cuánticos a partir del uso de paquetes de ondas a manera de partículas. Dichos paquetes de ondas deben contener toda la información de la partícula y permite, además obtener una función de probabilidad para la posición de la partícula en un cierto instante.\\
+En este orden de ideas, es posible ver, a partir de éstos paquetes, como se comportaría una partícula en situaciones como lo son, la acción de un potencial, el choque con otra partícula y el choque con un obstáculo. Permitiendo ver cambios en la energía, la masa, la velocidad y demás información que el paquete pueda contener.\\
+En algunas de estas situaciones es necesaria la solución de la ecuación de Schrödinger, definida como:
+\begin{equation}
+-\frac{\hbar^2}{2m}\nabla^2 \Psi + U(x)\Psi=-\i \hbar \frac{\partial \Psi}{\partial t}
+\end{equation}
+
+Donde $\Psi$ es la función de onda en el tiempo y el espacio.\\
+En lo posible se utilizarán las rutinas disponibles para Python en la solución de ecuaciones y la aplicación de transformadas.
+\end{document}
