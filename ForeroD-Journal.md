@@ -305,11 +305,47 @@ print Tabla
 
  ```
 
+
  #Décima clase 23Jun2015
 
  ##Derivación numérica:
 
  Es importante tener en cuenta las distintas opciones, como lo son *forward, backward y central differences* de las cuales el menor error resulta de las *central differences*. Los errores a su vez, pueden ser mejoradas realizando una extraólación haciendo que el error caiga más rápidamente al disminuir el valor de *h*.
+
+ Es importante anotar una receta para derivar.
+
+ ```
+ k=1.
+def examplefun(x):
+    return np.cos(x)
+def examplefunderivative(x):
+    return k*np.cos(k*x)
+numPoints=10000
+a=0. # Límite inferior
+b=100 # Límite superior
+finex=np.linspace(a,b,numPoints*10) # Esto es para hacer las gráficas más detalladas
+x=np.linspace(a,b,numPoints) # Sobre este array se evalúan las derivadas
+y=examplefun(x) # Las abscisas
+
+h = (b-a)/(numPoints-1) # Este es el paso del arreglo x
+yforward = np.roll(y,-1) # toma el arreglo y y lo mueve una posición hacia la izquierda
+ybackward = np.roll(y,1) # y esto una posición a la derecha
+'''
+# Calcular las derivadas usando forward differences
+dy1 = (yforward-y)/h
+dy1 = dy1[:-1] # la última no tiene significado
+
+# ahora usando diferencias pasadas,
+dy2=(y-ybackward)/h
+dy2=dy2[1:] # la primera no tiene significado
+'''
+# y finalmente usando diferencias centrales.
+dy3 = (yforward-ybackward)/(2.*h)
+# La primera y la última no tienen significado
+dy3=dy3[1:-1]
+
+```
+La plantilla se tomó de los *slides* del curso.
 
  En el Hands On se trata de limpiar la señal de forma que se eliminen altas frecuencias. Se encontraron problemas al realizar el filtro, dado que la información no parece coincidir con los datos originales.
  Se usó el siguiente código.
@@ -327,6 +363,35 @@ plt.plot(x,np.real(mmean_clean),label=u'Señal filtrada')
 #Undécima Clase 24Jun2015
 
 Se ven los métodos de Euler, Midpoint, y Runge-Kutta. Éste último consiste en  hacer una función que retorne la derivada de la ecuación diferencial (lado izquierdo de la ecuación) es importante tener en cuenta que permite resolver ecuaciones diferenciales de primer orden y sistemas de éstos.
+
+Para el método de *Runge-Kutta* de cuarto orden se tiene la siguiente receta a seguir:
+ ```
+ #Ahora se revisa la solución por Runge-Kutta.
+def f(Y):
+    return np.array([Y[1],sCubic(Y[0])/masaPeq])
+def one_Kutta4_step():
+    global t
+    global Deltat
+    global Y
+    K1 = f(Y)
+    K2 = f(Y + Deltat*(1./2.*K1))
+    K3 = f(Y + Deltat*(1./2.*K2))
+    K4 = f(Y + Deltat*K3)
+    Y+= Deltat * (1/6.*K1 + 1/3. * K2 + 1/3.*K3 + 1/6.*K4)
+    t+= Deltat
+
+Y= np.array([500.+135.,0.]) #m, m/s.
+numIter=10000
+tmax=50000
+t=0.
+Deltat=tmax/numIter
+history=np.array([[t,Y[0],Y[1]]])
+for i in range(numIter):
+    one_Kutta4_step()
+    history=np.append(history,[[t,Y[0],Y[1]],axis=0)
+```
+Se tomó el código de la sexta tarea, el cual se tomó de los *slides* también. Se define una función `f(Y)` tal que se deje una función `dY/dx=f(Y)`. Sólo se puede usar para ecuaciones diferenciales ordinarias de primer orden, por lo que cualquier ecuación diferencial de orden superior debe ser convertida en un sistema de N ecuaciones diferenciales de primer orden.
+
 
 #Duodécima Clase 30Jun2015
 
